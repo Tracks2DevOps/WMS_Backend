@@ -49,4 +49,4 @@ class WarehouseOrders(models.Model):
     # attachments = models.FileField("Attachments (ie. Bill of Ladings, Packing List, etc.)")
 
     def __str__(self):
-        return self.customer_name
+        return self.customer_name, self.sales_order

@@ -9,6 +9,18 @@ from .models import WarehouseOrders
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter, OrderingFilter
 
+# Vue API
+from django.shortcuts import render
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+
+# Create API view
+@api_view(['GET'])
+def get_orders(request):
+    orders = WarehouseOrders.objects.all()
+    serializer = OrdersSerializer(orders, many=True)
+    return Response(serializer.data)
+
 
 # create a viewset
 class OrdersViewSet(viewsets.ModelViewSet):

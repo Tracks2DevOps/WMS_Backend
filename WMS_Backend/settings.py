@@ -24,12 +24,18 @@ SECRET_KEY = 'django-insecure-vtpgn6h1-#dd$p*o8th9p75sbq$1vaef$gb$n^0w6t9!81c-q^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["10.9.32.235",
+                 "localhost",
+                 ]
 
 # User settings
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
 }
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:8080'
+]
 
 
 # Application definition
@@ -45,6 +51,9 @@ INSTALLED_APPS = [
     'warehouse',
     'rest_framework',
     'django_filters',
+    'rest_framework.authtoken',
+    'corsheaders',
+    'djoser',
 ]
 
 MIDDLEWARE = [
@@ -55,6 +64,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # User added
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'WMS_Backend.urls'
