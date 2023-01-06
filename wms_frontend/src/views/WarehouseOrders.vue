@@ -25,26 +25,22 @@
             <div class="columns is-multiline">
               <div
                 class="column is-4"
-                v-for="order in orders"
+                v-for="order in warehouseorders"
                 v-bind:key="order.id"
               >
                 <div class="card">
-                  <div class="card-image">
-                    <figure class="image is-4by3">
-                      <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                    </figure>
-                  </div>
 
                   <div class="card-content">
                     <div class="media">
                       <div class="media-content">
-                        <p class="is-size-5">{{ order.title }}</p>
+                        <p class="is-size-5">{{ order.customer_name }}</p>
                       </div>
                     </div>
                   </div>
 
                   <div class="content">
-                    <p>More placeholder text</p>
+                    <p>SO{{ order.sales_order }} </p>
+                    <p>{{ order.status_choices }} </p>
 
                     <a href="#">View</a>
                   </div>
@@ -89,7 +85,7 @@ export default {
     console.log('mounted')
 
     axios
-      .get('/api/v1/orders')
+      .get('/api/v1/orders/')
       .then(response => {
         console.log(response.data)
 

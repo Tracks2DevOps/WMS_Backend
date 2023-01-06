@@ -4,6 +4,8 @@ import AboutView from '../views/AboutView.vue'
 import SignUpView from '../views/SignUpView.vue'
 import LogInView from '../views/LogInView.vue'
 
+import MyAccount from '../views/dashboard/MyAccount.vue'
+
 import WarehouseOrders from '../views/WarehouseOrders.vue'
 
 const routes = [
@@ -35,6 +37,12 @@ const routes = [
     path: '/warehouseorders',
     name: 'WarehouseOrders',
     component: WarehouseOrders
+  },
+
+  {
+    path: '/dashboard/my-account',
+    name: 'MyAccount',
+    component: MyAccount
   }
 ]
 

@@ -26,6 +26,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["10.9.32.235",
                  "localhost",
+                 "127.0.0.1"
                  ]
 
 # User settings
@@ -34,7 +35,8 @@ REST_FRAMEWORK = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:8080'
+    'http://localhost:8080',
+    'http://192.168.4.154:8080'
 ]
 
 

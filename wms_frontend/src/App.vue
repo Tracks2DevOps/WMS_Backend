@@ -36,6 +36,3 @@
 @import '/Users/travis.jackson/PycharmProjects/WMS_Backend/node_modules/bulma';
 
 </style>
-<script setup>
-
-</script>
